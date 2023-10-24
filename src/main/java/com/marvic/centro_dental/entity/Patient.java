@@ -18,6 +18,10 @@ public class Patient {
     @Column(name = "last_name")
     private String lastName;
     @Column
+    private String run;
+    @Column
+    private int age;
+    @Column
     private String address;
     @Column
     private String phone;

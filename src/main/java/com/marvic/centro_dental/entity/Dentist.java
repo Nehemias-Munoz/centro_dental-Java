@@ -17,7 +17,8 @@ public class Dentist {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-
+    @Column
+    private String run;
     // Relation Den. - Specialty
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "specialty_id", nullable = false)
