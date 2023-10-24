@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table
+@Table(name = "Specialties")
 public class Specialty {
     @Id
     @Column(name = "specialty_id")
