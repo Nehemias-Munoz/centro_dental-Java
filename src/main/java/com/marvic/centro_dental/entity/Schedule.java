@@ -7,8 +7,8 @@ import java.time.LocalTime;
 
 @Data
 @Entity
-@Table
-public class Schedules {
+@Table(name = "Schedules")
+public class Schedule {
     @Id
     @Column(name = "schedule_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class Schedules {
     //Relation Sch. - Dentists
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "dentist_id", nullable = false)
-    private Dentists dentist;
+    private Dentist dentist;
 
     @Column(name = "day_of_week")
     private int dayOfWeek;

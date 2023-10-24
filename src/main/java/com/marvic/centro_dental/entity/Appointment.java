@@ -8,8 +8,8 @@ import java.time.LocalTime;
 
 @Data
 @Entity
-@Table
-public class Appointments {
+@Table(name = "Appointments")
+public class Appointment {
     @Id
     @Column(name = "appointment_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +18,12 @@ public class Appointments {
     //Relation App. - Patient
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "patient_id", nullable = false)
-    private Patients patient;
+    private Patient patient;
 
     //Relation App. - Dentist
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "dentist_id", nullable = false)
-    private Dentists dentist;
+    private Dentist dentist;
 
     @Column
     private LocalDate date;

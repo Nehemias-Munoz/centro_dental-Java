@@ -7,8 +7,8 @@ import java.util.List;
 
 @Data
 @Entity
-@Table
-public class Patients {
+@Table(name = "Patients")
+public class Patient {
     @Id
     @Column(name = "patient_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,6 @@ public class Patients {
 
     //Relation Pat. - Appointments
     @OneToMany(mappedBy = "patient")
-    List<Appointments> appointmentsList;
+    List<Appointment> appointmentList;
 
 }

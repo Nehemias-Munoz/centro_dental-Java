@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @Entity
 @Table
-public class Specialties {
+public class Specialty {
     @Id
     @Column(name = "specialty_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,5 +18,5 @@ public class Specialties {
 
     //Relation Spe. - Dentist
     @OneToMany(mappedBy = "specialty")
-    private List<Dentists> dentistsList;
+    private List<Dentist> dentistList;
 }

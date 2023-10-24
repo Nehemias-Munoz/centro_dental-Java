@@ -7,8 +7,8 @@ import java.util.List;
 
 @Data
 @Entity
-@Table
-public class Dentists {
+@Table(name = "Dentists")
+public class Dentist {
     @Id
     @Column(name = "dentist_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Dentists {
     // Relation Den. - Specialty
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @JoinColumn(name = "specialty_id", nullable = false)
-    private Specialties specialty;
+    private Specialty specialty;
 
     @Column
     private String phone;
@@ -30,9 +30,9 @@ public class Dentists {
 
     //Relation Den. - Appointment
     @OneToMany(mappedBy = "dentist")
-    List<Appointments> appointmentsList;
+    List<Appointment> appointmentList;
 
     //Relation Den. - Schedules
     @OneToMany(mappedBy = "dentist")
-    List<Schedules> schedulesList;
+    List<Schedule> scheduleList;
 }
